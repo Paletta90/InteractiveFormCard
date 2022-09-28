@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --LightGrayishViolet: hsl(270, 3%, 87%);
+  --DarkGrayishViolet: hsl(279, 6%, 55%);
+  --VeryDarkViolet: hsl(278, 68%, 11%);
+  --borderInputHover: hsl(249, 99%, 64%);
+  --borderInputClicked: hsl(278, 94%, 30%);
+  --font: "Space Grotesk", sans-serif;
+  --background: url(".././img/bg-main-desktop.png");
+  --back-card: url(".././img/bg-card-back.png");
+  --front-card: url(".././img/bg-card-front.png");
+}
+body {
+  font-size: 18px;
+}
+.font-big,
+.font-medium,
+.font-small {
+  font-family: var(--font);
+  font-weight: 500;
+}
+.font-big {
+  font-size: 1.3rem;
+  color: var(--White);
+}
+.font-medium {
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.font-small {
+  font-size: 0.8rem;
+  color: var(--White);
+}
+.background-desktop {
+  width: 100vw;
+  height: 25vh;
+  background: var(--background);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  section.background-desktop {
+    width: 40vw;
+    height: 100vh;
+  }
+  body > section.form {
+    width: 60vw;
+    height: 100vh;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body form {
+    margin-top: 0;
+  }
+  .back-card,
+  .front-card {
+    width: 70%;
+  }
+}

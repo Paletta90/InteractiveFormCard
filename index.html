@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/card.css" />
+    <link rel="stylesheet" href="./style/form.css" />
+    <link rel="stylesheet" href="./style/thankYou.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk"
+      rel="stylesheet"
+    />
+    <title>Interactive Form Card</title>
+  </head>
+  <body>
+    <!-- Cards -->
+    <section class="background-desktop">
+      <div class="container-cards">
+        <!-- Back-card -->
+        <div class="back-card">
+          <p class="text-back-card font-medium"></p>
+        </div>
+        <!-- Front-card -->
+        <div class="front-card">
+          <div class="inner-front-card">
+            <!-- Circles -->
+            <div class="circles">
+              <div class="circle-fill"></div>
+              <div class="circle-empty"></div>
+            </div>
+
+            <!-- Number card -->
+            <div class="number-card">
+              <p class="font-big">0000 0000 0000 0000</p>
+            </div>
+
+            <!-- Name and date -->
+            <div class="name-date">
+              <p class="font-small"></p>
+              <p class="font-small"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section class="form">
+      <form onsubmit="validationForm()" onkeyup="printOnCard()">
+        <label class="font-medium" for="fname">cardholder name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstName"
+          placeholder="e.g. David Smith"
+          maxlength="18"
+          oninput="onlyLetters(this)"
+          required
+        />
+        <label class="font-medium" for="fcard">card number</label>
+        <input
+          type="text"
+          id="fcard"
+          name="numberCard"
+          maxlength="16"
+          placeholder="e.g. 1234 5678 1234 5678"
+          oninput="onlyPositiveNumbers(this)"
+          required
+        />
+        <div class="fdate-cvc">
+          <div class="date">
+            <label class="font-medium" for="fdate">exp. date (mm/yy)</label>
+            <div class="fdate">
+              <input
+                type="text"
+                id="fdateM"
+                name="expDateM"
+                placeholder="MM"
+                maxlength="2"
+                oninput="onlyPositiveNumbers(this); maxNumber(this, 12)"
+                required
+              />
+              <input
+                type="text"
+                id="fdateY"
+                name="expDateY"
+                placeholder="YY"
+                maxlength="2"
+                oninput="onlyPositiveNumbers(this); maxNumber(this, 29)"
+                required
+              />
+            </div>
+          </div>
+          <div class="cvc">
+            <label class="font-medium" for="fcvc">cvc</label>
+            <input
+              type="text"
+              id="fcvc"
+              name="cvc"
+              placeholder="e.g. 123"
+              maxlength="3"
+              oninput="onlyPositiveNumbers(this)"
+              required
+            />
+          </div>
+        </div>
+
+        <button type="submit" class="font-big">Confirm</button>
+      </form>
+    </section>
+
+    <!-- Thank you message -->
+    <section class="thankYou">
+      <div class="container-message">
+        <img src="./img/icon-complete.svg" alt="" width="100px" />
+        <h2>thank you!</h2>
+        <p>We've added your card's details</p>
+        <button class="font-big" onclick="location.reload()">Continue</button>
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

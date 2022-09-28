@@ -1,0 +1,58 @@
+section.form {
+  height: 75vh;
+}
+form {
+  margin-top: 100px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 10px;
+}
+input {
+  margin-bottom: 20px;
+}
+input[type="text"] {
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid var(--LightGrayishViolet);
+}
+button {
+  background-color: var(--VeryDarkViolet);
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.cvc {
+  width: 40%;
+}
+.date {
+  width: calc(60% - 20px);
+  margin-right: 10px;
+}
+.fdate-cvc {
+  display: flex;
+}
+.fdate {
+  display: flex;
+  margin-top: 10px;
+}
+.fdate > input[type="text"] {
+  width: 60px;
+  margin-right: 10px;
+}
+.cvc > input[type="text"] {
+  margin-top: 10px;
+  width: 100%;
+}
+input[type="text"]:hover {
+  border-color: var(--borderInputHover);
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--borderInputClicked);
+}
+.error {
+  border-color: red;
+}

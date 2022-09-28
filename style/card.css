@@ -1,0 +1,120 @@
+.back-card,
+.front-card {
+  width: 250px;
+  aspect-ratio: 1 / 0.5;
+  position: relative;
+  border-radius: 10px;
+}
+
+.back-card {
+  background: var(--back-card);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-bottom: -40px;
+  margin-right: 10px;
+}
+.front-card {
+  background: var(--front-card);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+}
+.container-cards {
+  padding-top: 15px;
+}
+.inner-front-card {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.text-back-card {
+  position: absolute;
+  left: 73%;
+  top: 46.5%;
+}
+.circles {
+  display: flex;
+  align-items: center;
+}
+.circle-fill,
+.circle-empty {
+  border-radius: 50%;
+}
+.circle-fill {
+  width: 25px;
+  height: 25px;
+  background-color: var(--White);
+  margin-right: 15px;
+}
+.circle-empty {
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--White);
+}
+.name-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .back-card,
+  .front-card {
+    width: 300px;
+    position: absolute;
+  }
+  .container-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .front-card {
+    order: 1;
+    margin: 0;
+    top: 25%;
+    right: -5%;
+  }
+  .back-card {
+    order: 2;
+    margin: 0;
+    top: 50%;
+    right: -10%;
+  }
+  .text-back-card {
+    top: 47%;
+  }
+  .name-date > p {
+    font-size: 1rem;
+  }
+  .number-card > .font-big {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1220px) {
+  .back-card,
+  .front-card {
+    width: 350px;
+  }
+  .front-card {
+    top: 22.5%;
+    right: -10%;
+  }
+  .back-card {
+    top: 52.5%;
+    right: -15%;
+  }
+  .text-back-card {
+    top: 48%;
+  }
+  .number-card > .font-big {
+    font-size: 1.8rem;
+  }
+}
